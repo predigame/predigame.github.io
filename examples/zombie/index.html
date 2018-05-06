@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Predicate Academy">
+        <link rel="canonical" href="http://predigame.io/examples/zombie/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Zombie Madness - Predigame</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../js/highlight.pack.js" defer></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-116346762-1', 'predigame.io');
+            ga('send', 'pageview');
+        </script> 
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+       <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1356038102521881",
+         enable_page_level_ads: true
+        });
+       </script> 
+   </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Predigame</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li >
+                        <a href="../../about/">About</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../fireworks/">Fireworks!</a>
+</li>
+                            
+<li >
+    <a href="../pictureframe/">Picture Frame</a>
+</li>
+                            
+<li >
+    <a href="../bacon/">Making Bacon</a>
+</li>
+                            
+<li >
+    <a href="../clickninja/">Click Ninja</a>
+</li>
+                            
+<li >
+    <a href="../thirsty/">Thirsty Zombie</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Zombie Madness</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../sprites/">Drawing Sprites</a>
+</li>
+                            
+<li >
+    <a href="../actors/">Actor Framework</a>
+</li>
+                            
+<li >
+    <a href="../levels/">Levels</a>
+</li>
+                            
+<li >
+    <a href="../mazes/">Mazes</a>
+</li>
+                            
+<li >
+    <a href="../score/">Scoring</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../thirsty/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../sprites/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/predigame"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#zombie-madness">Zombie Madness</a></li>
+            <li><a href="#asset-licenses">Asset Licenses</a></li>
+            <li><a href="#prerequisites">Prerequisites</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#game-story">Game Story</a></li>
+            <li><a href="#instructional-coverage">Instructional Coverage</a></li>
+            <li><a href="#running-the-game">Running the Game</a></li>
+            <li><a href="#state-management">State Management</a></li>
+            <li><a href="#background-images">Background Images</a></li>
+            <li><a href="#mazes">Mazes</a></li>
+            <li><a href="#player-actions">Player Actions</a></li>
+            <li><a href="#bonus-sprites">Bonus Sprites</a></li>
+            <li><a href="#friendlies">Friendlies</a></li>
+            <li><a href="#hostiles">Hostiles</a></li>
+            <li><a href="#levels">Levels</a></li>
+            <li><a href="#scoring">Scoring</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="zombie-madness">Zombie Madness</h1>
+<p>A coding instructional implementation based on the <a href="http://predigame.com">Predigame Platform</a>. Many of the features have been curated by ~75 aspiring innovators (ages 10+) who love to flex their STEM prowess by putting ideas to code!</p>
+<h2 id="asset-licenses">Asset Licenses</h2>
+<p>All static artwork has been obtained from <a href="https://opengameart.org/">OpenGameArt</a> or from Google with the "Labeled for reuse" filtered defined. Animated sprites are licensed to Predicate Academy (Predigame's developer) for use limited to non-commercial Predigame development.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>You'll need to have the Predigame platform installed, a trusty text editor handy, and the command prompt (or terminal) open to complete this tutorial. Visit <a href="http://predigame.io">http://predigame.io</a> for installation instructions.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>To get things started, we're going download an existing Predigame game that has a few images and sound effects we can use to experiment. This can be done by typing the following the command in the terminal:</p>
+<pre><code>pred pull zombie
+</code></pre>
+
+<p>Then change into the <code>zombie</code> directory.</p>
+<pre><code>cd zombie
+</code></pre>
+
+<h2 id="game-story">Game Story</h2>
+<ul>
+<li>This game consists of three "actors" - the player (you, depicted as a soldier), red forces (depicted as a zombie), and blue forces (depicted as a wild boar).</li>
+<li>Red forces launch in the top-right corner and will randomly find and seek the player and blues. Reds will attack upon collision. Death will be imminent. Blue deaths immediately turn into a new red. Player death ends game.</li>
+<li>Blue forces launch in the top-left corner and try to navigate to their "home" destination (bottom-right corner). They don't know anything about the player and zombie, though it is possible to hack the blue forces and add "self defense".</li>
+<li>Reds and blues  periodically "replan" their routes.</li>
+<li>Players try to ensure as many blues can return home safely while destroying all reds. They have weapons and should not be afraid to use them.</li>
+<li>There is a 10% chance of a special level that will require a different strategy.</li>
+</ul>
+<p><a href="https://youtu.be/ysMEknhl8Us" title="Zombie Madness"><img alt="IMAGE ALT TEXT" src="http://img.youtube.com/vi/ysMEknhl8Us/0.jpg" /></a></p>
+<h2 id="instructional-coverage">Instructional Coverage</h2>
+<p>We're working on some videos to describe Predigame concepts in more detail, but this game illustrates quite a few pretty cool features of the platform.</p>
+<p><strong>Predigame Concepts Covered:</strong></p>
+<ul>
+<li>Callbacks (timing and keyboard)</li>
+<li>Animated Actors</li>
+<li>Levels</li>
+<li>Scoring and Statistics</li>
+<li>Preserving Game State</li>
+<li>Inventory Control</li>
+<li>Weapons!</li>
+</ul>
+<p><strong>Python Concepts Covered:</strong></p>
+<ul>
+<li>Abstractions</li>
+<li>Loops</li>
+<li>Classes</li>
+</ul>
+<p>The game consists of three files:</p>
+<ul>
+<li><code>zombie.py</code> - [ADVANCED] contains the bulk of the implementation. Can be modified as desired, but some of the concepts would require prior programming experience.</li>
+<li><code>weapons.py</code> - [INTERMEDIATE] all game weapons are defined as python classes. We recommend coders with prior experience experiment with the weapons and see the corresponding impacts in the game.</li>
+<li><code>zombie_plugins.py</code> - [BEGINNER] the game has a bunch of user defined features that can be easily tweaked to change the style and function of the game. The majority of our coders spend their time working in this file. This README walks through some common <strong>use cases</strong> and the underlying code that would be required for implementation. Each example includes a <strong>LOCATION GUIDE</strong> that will detail where in the <code>zombie_plugins.py</code> file to insert and modify the code.<ul>
+<li>For those looking to start fresh, we've included a file <code>zombie_plugins_start.py</code> that has the bare minimum for a functioning game. You'll want save this file as <code>zombie_plugins.py</code> and start coding! Keep in mind that bare minimum means <em>NO WEAPONS</em> so you'll need to be extra careful and avoid those red forces.</li>
+</ul>
+</li>
+</ul>
+<h2 id="running-the-game">Running the Game</h2>
+<p>We recommend running all predigames from the command prompt/console/terminal. Be sure to <code>cd</code> into your game directory run:</p>
+<pre><code>pred zombie.py
+</code></pre>
+
+<h2 id="state-management">State Management</h2>
+<p>Upon completion of a level, the game will write two state files. These files can be deleted to reset state.</p>
+<ul>
+<li><code>player.pg</code> - consists of player energy, wealth, and inventory.</li>
+<li><code>stats.pg</code> - consists of key game metrics:<ul>
+<li>Number of levels completed</li>
+<li>Number of blue|red forces launched</li>
+<li>Number of red kills</li>
+<li>Number of player kills</li>
+<li>Number of blue forces that arrive home safely</li>
+</ul>
+</li>
+</ul>
+<h2 id="background-images">Background Images</h2>
+<h3 id="static-backgrounds">Static backgrounds</h3>
+<p><strong>LOCATION GUIDE</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<p>This code will provide a single image that is used in ever level. You'll want to add to your setup function.</p>
+<pre><code class="python">   background('grass')
+</code></pre>
+
+<p>You can also just have single color. Here is an example of a gray background.</p>
+<pre><code class="python">   background(GRAY)
+</code></pre>
+
+<p>If you have a particular color in mind, it's possible to also define the background with a <code>(red, green, blue)</code> tuple.</p>
+<pre><code class="python">   background((25, 25, 25))
+</code></pre>
+
+<h3 id="random-backgrounds">Random backgrounds</h3>
+<p><strong>LOCATION GUIDE</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<p>If you interested in changing backgrounds for each level, we'll want to create a list with all of our choices and then use the <code>choice()</code> function to randomly select an image file from the list.</p>
+<pre><code class="python">   choices = ['grass', 'ville']
+   background(choice(choices))
+</code></pre>
+
+<p>We also have a pretty cool image service that will randomly pick and use a background from the Internet. This can add a little jazz to your game.</p>
+<pre><code class="python">   background()
+</code></pre>
+
+<h3 id="progressive-backgrounds">Progressive backgrounds</h3>
+<p><strong>LOCATION GUIDE</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<p>Sometimes you'll want to have the same background be used for the same level. This can provide a hint to the user of where they are in the game. In order to accomplish progressive backgrounds, we'll need to evaluate the level and decide which background image to load. Using python, we can accomplish this with an if/else statement.</p>
+<pre><code class="python">   if level.level == 1:
+      background('grass')
+   elif level.level == 2:
+      background('ville')
+   else:
+      background('stormy')
+</code></pre>
+
+<p>Notice that the file line is the "catch all" statement. This basically means the same <code>stormy</code> image will be used for the third and beyond levels.</p>
+<h2 id="mazes">Mazes</h2>
+<h3 id="generated-maze">Generated maze</h3>
+<p><strong>LOCATION GUIDE</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<p>It's possible, also within the <code>setup</code> function, to define the type of maze should be drawn on the game service. Assuming that there is an image with the name <code>'stone'</code>, it's possible to use that to draw the maze.</p>
+<pre><code class="python">   maze(callback=partial(image, 'stone'))
+</code></pre>
+
+<p>Likewise, it's also possibly to simply draw a maze with colors. For example,</p>
+<pre><code class="python">   maze(callback=partial(shape, RECT, BLACK))
+</code></pre>
+
+<h3 id="random-maze">Random maze</h3>
+<p><strong>LOCATION GUIDE</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<p>Sometimes it may be desirable to have some randomly placed blocks to create as obstacles. It's possible to tweak the <code>2.75</code> number to draw more or less blocks. The numbers <code>19</code> and <code>31</code> signify the HEIGHT and WIDTH of the window, in terms of grid cells.</p>
+<pre><code class="python">   for y in range(19):
+      for x in range(31):
+         if rand(1, 3) &gt; 2.75:
+            shape(RECT, RED, (x, y), tag='wall')
+</code></pre>
+
+<h2 id="player-actions">Player Actions</h2>
+<h3 id="keyboard-shortcuts">Keyboard Shortcuts</h3>
+<p><strong>NOTE:</strong> some of these shortcuts use the same keys. They can be easily changed to something else. It is not possible to assign more than one shortcut to the same keyboard key.</p>
+<h4 id="change-the-walking-keys">Change the walking keys</h4>
+<p><strong>LOCATION GUIDE</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<p>The game uses arrow keys for walking by default. It's possible to change them to something else. The below example changes them to <code>w</code>, <code>a</code>, <code>s</code>,  and <code>d</code>. This code will need to be added to your <code>setup</code> function</p>
+<pre><code class="python">   player.keys(right = 'd', left = 'a', up = 'w', down = 's', precondition=player_physics)
+</code></pre>
+
+<p>This code will obey the maze walls. If you want to walk through them, remove the <code>, precondition=player_physics</code> ending. The resulting code will look like this:</p>
+<pre><code class="python">   player.keys(right = 'd', left = 'a', up = 'w', down = 's')
+</code></pre>
+
+<h4 id="change-facing-direction-without-moving">Change facing direction (without moving)</h4>
+<p><strong>LOCATION GUIDE</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<p>Sometimes you may want to quickly change direction and shoot without having to move. This code will rebind the arrow keys to changing the facing direction. Keep in mind that you'll need to <strong>change the walking keys</strong> or <strong>register different keys for the facing direction</strong>. This code will need to be added to your <code>setup</code> function.</p>
+<pre><code class="python">   def __direction__(player, direction):
+      &quot;&quot;&quot; change the players direction  &quot;&quot;&quot;
+      player.direction = direction
+      player.act(IDLE, FOREVER)
+
+   keydown('left', callback=partial(__direction__,player, LEFT))
+   keydown('right', callback=partial(__direction__,player, RIGHT))
+   keydown('up', callback=partial(__direction__,player, BACK))
+   keydown('down', callback=partial(__direction__,player, FRONT))
+</code></pre>
+
+<h3 id="inventory-controlled-weapons">Inventory Controlled Weapons</h3>
+<p><strong>LOCATION GUIDE (ALL WEAPONS)</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<table>
+<thead>
+<tr>
+<th>weapon</th>
+<th align="center">cost</th>
+<th align="center">energy impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>air gun</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td>c4 explosive</td>
+<td align="center">50</td>
+<td align="center">-10</td>
+</tr>
+<tr>
+<td>flame thrower</td>
+<td align="center">500</td>
+<td align="center">-50</td>
+</tr>
+<tr>
+<td>green rage</td>
+<td align="center">25</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td>grenade</td>
+<td align="center">100</td>
+<td align="center">-50</td>
+</tr>
+<tr>
+<td>landmine</td>
+<td align="center">50</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td>machine gun</td>
+<td align="center">2</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td>mustard gas</td>
+<td align="center">250</td>
+<td align="center">-10</td>
+</tr>
+<tr>
+<td>punch</td>
+<td align="center">1</td>
+<td align="center">-10</td>
+</tr>
+<tr>
+<td>wall builder</td>
+<td align="center">5</td>
+<td align="center">-5</td>
+</tr>
+<tr>
+<td>wall buster</td>
+<td align="center">n/a</td>
+<td align="center">-0.25</td>
+</tr>
+<tr>
+<td>nuclear bomb</td>
+<td align="center">mucho grande</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p><em>Core conceptual language</em> - A player "takes" a Thing (can be anything) that is later used.</p>
+<h4 id="inventory-market-place">Inventory Market Place</h4>
+<p>Buy weapons, restore energy at the market place! The market place can be accessed with the <code>F1</code> key during the game. All activity will be paused while you shop.</p>
+<h4 id="air-gun">Air Gun</h4>
+<p>Shoots "air" bullets. Default activation is with the <code>space</code> bar.</p>
+<pre><code class="python">   player.take(weapons.AirGun(call='space'))
+</code></pre>
+
+<h4 id="c4-explosives">C4 Explosives</h4>
+<p>Drops C4 explosives. Thrown with the <code>7</code> key, detonated with the <code>8</code> key. Default throwing distance is <code>8</code> blocks and blast radius is <code>10</code> (which is about four blocks). Explosives only kill actors and do not destroy walls.</p>
+<pre><code class="python">   player.take(weapons.C4(call='7', detonate='8', distance=8, radius=10))
+</code></pre>
+
+<h4 id="flame-thrower">Flame Thrower</h4>
+<p>Throws a devastating ball of fire. It takes quite a bit of energy to generate a the fiery ball, but it's a sure way to clear out the bad guys. The flame had an internal compass that shadows the player's orientation, so move the player around for maximum effect.</p>
+<p>Generated and thrown with the <code>2</code> key. Use player directional keys after thrown to control flame ball.</p>
+<pre><code class="python">   player.take(weapons.FlameThrower(call='2'))
+</code></pre>
+
+<h4 id="green-rage-energy-drink">Green Rage (Energy Drink)</h4>
+<p>Give your player a dose of caffeine for continued rage! Only accessible from the inventory panel.  </p>
+<h4 id="grenade">Grenade</h4>
+<p>Throw a grenade with the <code>3</code> key. Default throwing distance is <code>6</code> blocks and blast radius is <code>10</code> (which is about four blocks). Grenade destroys anything in it's blasting radius - including walls!</p>
+<pre><code class="python">   player.take(weapons.Grenade(call='3', distance=6, radius=10))
+</code></pre>
+
+<h4 id="landmine">Landmine</h4>
+<p>Plant a landmine with the <code>6</code> key. The bomb is activated in one second. <strong>BE CAREFUL!!</strong> - your player can fall victim to the explosive.</p>
+<pre><code class="python">   player.take(weapons.Landmine(call='6', delay=1))
+</code></pre>
+
+<h4 id="machine-gun">Machine Gun</h4>
+<p>Keep your blue forces safe with the trusty machine gun! Default trigger is the <code>5</code> key with single bullets that travel <code>15</code> blocks. Want rapid fire more bullets? Be sure to set the <code>repeat</code> parameter.</p>
+<pre><code class="python">   player.take(weapons.MachineGun(call='5', distance=15, repeat=1))
+</code></pre>
+
+<h4 id="mustard-gas">Mustard Gas</h4>
+<p>Take out your enemies with a harmful chemical weapon. Thrown with the <code>4</code> key, a mustard gas capsule travels <code>10</code> blocks and has an effective radius of <code>20</code> (about 5 blocks). The gas capsule only explodes if it hits an actor instance.</p>
+<pre><code class="python">   player.take(weapons.MustardGas(call='4', distance=10, radius=20))
+</code></pre>
+
+<h4 id="punch">Punch</h4>
+<p>When all else fails, use your hands! The simple punch is activated with the <code>1</code> key. Make sure you sneak behind your enemy as they can attack you otherwise!</p>
+<pre><code class="python">   player.take(weapons.Punch(call='1'))
+</code></pre>
+
+<h4 id="wall-builder">Wall Builder</h4>
+<p>Have your player use walls to provide defense from the zombies. The first line sets the wall image, the second sets the directional callback keys.</p>
+<pre><code class="python">   wall = partial(image, 'stone')
+   player.take(weapons.WallBuilder(left='left', right='right', front='up', back='down', wall=wall))
+</code></pre>
+
+<p>Want to use colored rectangles instead? Give this a shot:</p>
+<pre><code class="python">   wall = partial(shape, RECT, BLACK)
+   player.take(weapons.WallBuilder(left='left', right='right', front='up', back='down', wall=wall))
+</code></pre>
+
+<h4 id="wall-buster">Wall Buster</h4>
+<p>Let your player bust through the maze walls. Make sure you reset player walking keys (see above). A player that obeys physics can't bust walls!</p>
+<pre><code class="python">   player.take(weapons.WallBuster())
+</code></pre>
+
+<h4 id="nuclear-bomb">Nuclear Bomb</h4>
+<p>OH. YEAH! Every game needs this one. Keep in mind that it takes a few seconds to call in the bomb. By default our bomb can be called in with the <code>n</code> key.</p>
+<pre><code class="python">   player.take(weapons.NuclearBomb(call='n'))
+</code></pre>
+
+<h2 id="bonus-sprites">Bonus Sprites</h2>
+<p><strong>LOCATION GUIDE</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<p>These boost sprites allow your player to earn extra energy and wealth bonuses during the game. Blue and red forces are immune to boost sprites.</p>
+<h3 id="energy-boost">Energy Boost</h3>
+<p>This code will drop <code>sprite</code> images with a <code>5%</code> probability. Anytime the player collides with a <code>sprite</code> image, the player is rewarded with a <code>10%</code> energy boost.</p>
+<pre><code class="python">   def drink(soda, player):
+      soda.destroy()
+      player.energy = 10
+   fill(partial(image,'sprite', size=1.0), 0.05, player, drink)
+</code></pre>
+
+<h3 id="wealth-boost">Wealth Boost</h3>
+<p>This code will drop <code>coin</code> images with a <code>25%</code> probability. Anytime the player collides with a <code>coin</code> image, the player is rewarded with a <code>5</code> point wealth boost.</p>
+<pre><code class="python">   def claim(coin, player):
+      coin.destroy()
+      player.wealth = 5
+   fill(partial(image,'coin', size=1.0), 0.25, player, claim)
+</code></pre>
+
+<h2 id="friendlies">Friendlies</h2>
+<p><strong>LOCATION GUIDE</strong>: <em>insert as a top-level function</em></p>
+<p>Your objective is to save the life of friendly forces.</p>
+<pre><code class="python">def get_blue():
+   &quot;&quot;&quot; create a blue (friendly) actor &quot;&quot;&quot;
+   # return name of actor and grazing speed
+   return 'Boar', 3
+</code></pre>
+
+<h3 id="custom-destination-image">Custom destination image</h3>
+<p><strong>LOCATION GUIDE</strong>: <em>insert as a top-level function</em></p>
+<p>Don't like the default pig pen image? It's possible to create your own with this function and then change <code>pigpen</code> with whatever image you want!</p>
+<pre><code class="python">def blue_destination():
+   return 'pigpen'
+</code></pre>
+
+<h3 id="self-defense-hard">Self defense [HARD]</h3>
+<p><strong>LOCATION GUIDE</strong>: <em>insert as a top-level function and modify <code>get_blue</code></em></p>
+<p>It's possible to have your blue forces automate a self defense. This code is a bit weird and it still may allow hostiles to kill blue forces.</p>
+<p><strong>Step 1:</strong> Define a self-defense function
+This code checks all directions to see if any red forces are within <code>5</code> blocks. When a red force is nearby, the blue throws some self defense flares -- instantly killing the enemy.</p>
+<pre><code class="python">def blue_defend(actor):
+   &quot;&quot;&quot; activate self defense &quot;&quot;&quot;
+   for direction in [BACK, FRONT, LEFT, RIGHT]:
+      things = actor.next_object(direction=direction, distance=5)
+      if things and has_tag(things, 'red'):
+            actor.direction = direction
+            actor.stop = True
+            target = actor.next_object()
+            if target and isinstance(target, Actor):
+               turd = image('turd', pos=actor.pos).speed(15)
+               turd.move_to(target.pos).destruct(2)
+               target.kill()
+            callback(partial(actor.act, IDLE, FOREVER), 5)
+</code></pre>
+
+<p><strong>Step 2:</strong> Change the <code>get_blue</code> function to include the newly added <code>blue_defend</code> self defense function.</p>
+<pre><code class="python">def get_blue():
+   &quot;&quot;&quot; create a blue (friendly) actor &quot;&quot;&quot;
+   # return name of actor, grazing speed, self defense
+   return 'Piggy', 2, blue_defend
+</code></pre>
+
+<h3 id="schedule-more-friendlies">Schedule more friendlies</h3>
+<p><strong>LOCATION GUIDE</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<p>It's easy to schedule more friendlies with a callback function. Here's a couple of variations. All will need to be added to your <code>setup</code> function.</p>
+<p><strong>schedule a single friendly (1 second delay)</strong></p>
+<pre><code class="python">   callback(level.create_blue, wait=1)
+</code></pre>
+
+<p><strong>schedule a friendly every 10 seconds and repeat 5 times</strong></p>
+<pre><code class="python">   callback(level.create_blue, wait=10, repeat=5)
+</code></pre>
+
+<p><strong>schedule a friendly every 10 seconds and repeat forever</strong></p>
+<pre><code class="python">   callback(level.create_blue, wait=10, repeat=FOREVER)
+</code></pre>
+
+<h2 id="hostiles">Hostiles</h2>
+<p><strong>LOCATION GUIDE</strong>: <em>insert as a top-level function</em></p>
+<p>Your object is to eliminate all hostile actors.</p>
+<pre><code class="python">def get_red():
+   &quot;&quot;&quot; create a red (hostile) actor &quot;&quot;&quot;
+   # return name of actor, movement speed
+   return 'Zombie-1', 1
+</code></pre>
+
+<p>Spawn different types of zombies at different speeds!</p>
+<pre><code class="python">def get_red():
+   &quot;&quot;&quot; create a red (hostile) actor &quot;&quot;&quot;
+   # return name of actor, movement speed
+   zombies = ['Zombie-1','Zombie-2','Zombie-3']
+   return choice(zombies), randint(1,4)
+
+</code></pre>
+
+<h3 id="schedule-more-hostiles">Schedule more hostiles</h3>
+<p><strong>LOCATION GUIDE</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<p>It's easy to schedule more hostiles with a callback function. Here's a couple of variations. All will need to be added to your <code>setup</code> function.</p>
+<p><strong>schedule a single hostile (1 second delay)</strong></p>
+<pre><code class="python">   callback(level.create_red, wait=1)
+</code></pre>
+
+<p><strong>schedule a hostile every 10 seconds and repeat 5 times</strong></p>
+<pre><code class="python">   callback(level.create_red, wait=10, repeat=5)
+</code></pre>
+
+<p><strong>schedule a hostile every 10 seconds and repeat forever</strong></p>
+<pre><code class="python">   callback(level.create_red, wait=10, repeat=FOREVER)
+</code></pre>
+
+<h2 id="levels">Levels</h2>
+<p><strong>LOCATION GUIDE</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<h3 id="overriding-the-default-behavior-must-add">Overriding the default behavior (MUST ADD)</h3>
+<p>It's possible to change how the story ends! Here's a few possible tricks you can try. Be sure to <strong>register</strong> your <code>__completed__</code> function first!</p>
+<pre><code class="python">   def __completed__(self):
+      # promote level by killing all the hostiles
+      if len(get('red')) == 0:
+         self.player.energy = 50
+         self.player.wealth = 250
+         save_state(self.player, 'player.pg')
+         return True
+
+   # register the __completed__ function to control how the level decisions are made
+   level.completed = MethodType(__completed__, level)
+</code></pre>
+
+<p>You'll notice that plugging in this code will drastically change how the levels end. What happens if all the blues die? What happens if your player dies?</p>
+<p>The rest of the the updates will be specific to the <code>__completed__</code> function. There is no need to register that function more than once.</p>
+<h4 id="option-1-all-blues-go-home">Option 1: All Blues Go Home</h4>
+<p>This code will promote the level if all blue forces go home. It will also end the game if one dies. Again, you'll want to replace your existing <code>__completed__</code> function with this code.</p>
+<pre><code class="python">   def __completed__(self):
+      if self.blue_spawned == self.blue_safe:
+         self.player.energy = 50
+         self.player.wealth = 250
+         save_state(self.player, 'player.pg')
+         return True
+      elif self.blue_killed &gt; 0:
+         text('GAME OVER')
+         gameover()
+
+</code></pre>
+
+<h4 id="option-2-option-1-player-survives">Option 2: Option 1 + Player Survives</h4>
+<pre><code class="python">   def __completed__(self):
+      if self.blue_spawned == self.blue_safe:
+         self.player.energy = 50
+         self.player.wealth = 250
+         save_state(self.player, 'player.pg')
+         return True
+      elif self.blue_killed &gt; 0 or len(get('player')) == 0:
+         text('GAME OVER')
+         gameover()
+</code></pre>
+
+<h4 id="option-3-option-2-kill-all-the-hostiles">Option 3: Option 2 + Kill all the hostiles</h4>
+<pre><code class="python">   def __completed__(self):
+      if self.blue_spawned == self.blue_safe:
+         self.player.energy = 50
+         self.player.wealth = 250
+         save_state(self.player, 'player.pg')
+         return True
+      elif len(get('red')) == 0:
+         self.player.energy = 50
+         self.player.wealth = 250
+         save_state(self.player, 'player.pg')
+         return True
+      elif self.blue_killed &gt; 0 or len(get('player')) == 0:
+         text('GAME OVER')
+         gameover()  
+</code></pre>
+
+<h4 id="option-4-blues-go-home-and-their-house-survives">Option 4: Blues go home and their house survives</h4>
+<pre><code class="python">   def __completed__(self):
+      if self.blue_spawned == self.blue_safe:
+         self.player.energy = 50
+         self.player.wealth = 250
+         save_state(self.player, 'player.pg')
+         return True
+      elif len(get('destination')) == 0:
+        text('DESTINATION DESTROYED! GAME OVER!')
+        gameover()  
+      elif self.blue_killed &gt; 0 or len(get('player')) == 0:
+         text('GAME OVER')
+         gameover()  
+</code></pre>
+
+<h4 id="option-5-option-4-all-reds-die">Option 5: Option 4 + all reds die</h4>
+<pre><code class="python">   def __completed__(self):
+      if self.blue_spawned == self.blue_safe and len(get('red')) == 0:
+         self.player.energy = 50
+         self.player.wealth = 250
+         save_state(self.player, 'player.pg')
+         return True
+      elif len(get('destination')) == 0:
+        text('DESTINATION DESTROYED! GAME OVER!')
+        gameover()  
+      elif self.blue_killed &gt; 0 or len(get('player')) == 0:
+         text('GAME OVER')
+         gameover()  
+</code></pre>
+
+<h2 id="scoring">Scoring</h2>
+<h3 id="add-countdown-timer">Add  countdown timer</h3>
+<p><strong>LOCATION GUIDE</strong>: <em>insert inside the setup function</em> -- <code>def setup(player, level):</code></p>
+<p>This code should be added to the end of the <code>setup</code> function.
+<code>python
+   timer(color=WHITE, value=30)</code>
+If desired, it's also possible to add a countdown time that adds additional time for each level. The following code will add 30 seconds for each level.
+<code>python
+   timer(color=WHITE, value=30*level.level)</code></p></div>
+        </div>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/require.js" defer></script>
+        <script src="../../search/search.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

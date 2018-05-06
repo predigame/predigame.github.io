@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Predigame Instructional Platform">
+        <meta name="author" content="Predicate Academy">
+        <link rel="canonical" href="http://predigame.io/">
+        <link rel="shortcut icon" href="./img/favicon.ico">
+        <title>Predigame</title>
+        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="./css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="./css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="./js/jquery-1.10.2.min.js" defer></script>
+        <script src="./js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="./js/highlight.pack.js" defer></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-116346762-1', 'predigame.io');
+            ga('send', 'pageview');
+        </script> 
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+       <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1356038102521881",
+         enable_page_level_ads: true
+        });
+       </script> 
+   </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=".">Predigame</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href=".">Home</a>
+                    </li>
+                    <li >
+                        <a href="about/">About</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="examples/fireworks/">Fireworks!</a>
+</li>
+                            
+<li >
+    <a href="examples/pictureframe/">Picture Frame</a>
+</li>
+                            
+<li >
+    <a href="examples/bacon/">Making Bacon</a>
+</li>
+                            
+<li >
+    <a href="examples/clickninja/">Click Ninja</a>
+</li>
+                            
+<li >
+    <a href="examples/thirsty/">Thirsty Zombie</a>
+</li>
+                            
+<li >
+    <a href="examples/zombie/">Zombie Madness</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="examples/sprites/">Drawing Sprites</a>
+</li>
+                            
+<li >
+    <a href="examples/actors/">Actor Framework</a>
+</li>
+                            
+<li >
+    <a href="examples/levels/">Levels</a>
+</li>
+                            
+<li >
+    <a href="examples/mazes/">Mazes</a>
+</li>
+                            
+<li >
+    <a href="examples/score/">Scoring</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li class="disabled">
+                        <a rel="next" >
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="about/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/predigame"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#predigame-instructional-platform">Predigame Instructional Platform</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#installing-predigame">Installing Predigame</a></li>
+            <li><a href="#updating-predigame">Updating Predigame</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#coding-your-first-game">Coding Your First Game</a></li>
+            <li><a href="#api-docs">API Docs</a></li>
+            <li><a href="#support">Support</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="predigame-instructional-platform">Predigame Instructional Platform</h1>
+<p><img alt="Screenshot" src="./img/porter_270_alive.gif" /></p>
+<p><em>Pure Code. Pure Fun. Brain candy for the aspiring coder!</em></p>
+<h2 id="overview">Overview</h2>
+<p>Predigame is an instructional platform that teaches the basics of coding through the creation of arcade games.
+The platform was researched and developed by <a href="http://predicate.us">Predicate Academy</a> and used for teaching kids ages 8-17 all the <em>amazingly cool things</em> that can be created with code. Predigame is a minimalistic platform and makes extensive use of coding abstractions to present a "low lift" interface that is especially welcoming to first time coders. Predigame allows aspiring coders to familiarize themselves with <em>computational thinking</em> while
+downplaying many of the language and keyboard nuances that come with using a text-based coding language. Holding true to form, Predigame seeks to offer a coding experience through the lens of a technologist - specific emphasis is given towards software design, modern programming languages, command line execution, error debugging - skills that are <em>directly transferrable</em> in any journey to becoming a software engineer.</p>
+<p>Unlike other introductory platforms that teach coding concepts through visual (drag and drop) interactions, Predigame is written in Python and Pygame. While the core gaming platform covers a number of common use cases, Predigame is completely extensible and games can be amplified with custom code.</p>
+<p>Predigame requires minimum computing resources and has been tested on Microsoft Windows 10, macOS 10.12+ (Sierra and High Sierra), and Raspberry Pi Model 2B/3B (Raspbian Jessie and Stretch). It may likely run in on other operating systems, we just haven't tested them (yet).</p>
+<p>We assume that all users have some basic computer skills: typing, opening/closing windows, as well as an ability to navigate files and folders.</p>
+<h3 id="example-game-zombie-madness">Example Game - Zombie Madness</h3>
+<p>Zombie Madness is an instructional implementation that was used by <a href="http://predicate.us">Predicate Academy</a> during their Winter and Sping 2018 seasonal classes. Many of the features have been curated by ~75 aspiring innovators (ages 10+) who love to flex their STEM prowess by putting ideas to code! Click the image below for a video of the game in action!</p>
+<p><a href="https://youtu.be/ysMEknhl8Us" title="Zombie Madness"><img alt="IMAGE ALT TEXT" src="http://img.youtube.com/vi/ysMEknhl8Us/0.jpg" /></a></p>
+<h3 id="example-game-click-ninja">Example Game - Click Ninja</h3>
+<p>Click Ninja was inspired by the app <a href="https://fruitninja.com/">fruit ninja</a>, but it's a little different since we have a mouse and not a touch screen. Click the image below for a video of the game in action!</p>
+<p><a href="https://youtu.be/jKYfLYLctHE" title="Click Ninja"><img alt="IMAGE ALT TEXT" src="http://img.youtube.com/vi/jKYfLYLctHE/0.jpg" /></a></p>
+<h2 id="installing-predigame">Installing Predigame</h2>
+<h3 id="install-a-text-editor">Install a Text Editor</h3>
+<p>Every coder needs a good text editor. For python development, we recommend using <a href="https://atom.io">Atom</a>. New to Atom? Check out their <a href="https://flight-manual.atom.io/getting-started/sections/atom-basics/">documentation</a>. Sorry Pi Users - Atom isn't currently available for Raspbian, so we'd recommend using IDLE or Thonny (both come preinstalled with Raspbian Stretch).</p>
+<h3 id="microsoft-windows-10">Microsoft Windows 10</h3>
+<p><em>NOTE: installation will require Administrator permissions</em></p>
+<p>New to coding and installing stuff? Check out our <a href="https://youtu.be/RD5eD1VoPCI">Windows Installation Video</a>!</p>
+<p><strong>Install Python</strong></p>
+<p>Predigame has been tested with Python v3.6.4 (<a href="https://www.python.org/ftp/python/3.6.4/python-3.6.4-amd64.exe">direct download link</a>). When installing, you'll want to make sure to check the box to have Python added to your PATH (it's off by default).</p>
+<p><img alt="Windows Screenshot" src="./img/win_setup.png" /></p>
+<p><strong>Install Pygame</strong></p>
+<p>Open a command prompt (search: <em>command prompt</em>)</p>
+<p><img alt="Windows Screenshot" src="./img/win_setup2.png" /></p>
+<p>Type the following command in the command prompt window:</p>
+<pre><code>python -m pip install -U pygame
+</code></pre>
+
+<p>Look for line <code>Successfully installed ...</code> to indicate a successful installation.</p>
+<p><strong>Install Predigame</strong></p>
+<p>Open a command prompt (or reuse the window from the previous step) and type the following command:</p>
+<pre><code>python -m pip install -U predigame
+</code></pre>
+
+<p>This can take a minute or two to complete. Look for the line <code>Successfully installed ...</code> to indicate a successful installation.</p>
+<h3 id="macos">macOS</h3>
+<p><em>NOTE: installation will require Administrator permissions</em></p>
+<p>New to coding and installing stuff? Check out our <a href="https://youtu.be/7xhS6yW5wjY">macOS installation video</a>!</p>
+<p><strong>Install Python</strong></p>
+<p>Predigame has been tested with Python v3.6.4 (<a href="https://www.python.org/ftp/python/3.6.4/python-3.6.4-macosx10.6.pkg">direct download link</a>).</p>
+<p><strong>Install Pygame</strong></p>
+<p>Open a Terminal (command search: <em>Terminal</em> or visit <a href="http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">this link</a> for help). Type the following command in the terminal:</p>
+<pre><code>sudo pip3 install -U pygame
+</code></pre>
+
+<p>This command will require an administrator account and a prompt for a password. Look for line <code>Successfully installed ...</code> to indicate a successful installation.</p>
+<p><strong>Install Predigame</strong></p>
+<p>Open a command prompt (or reuse the window from the previous step) and type the following command:</p>
+<pre><code>sudo pip3 install -U predigame
+</code></pre>
+
+<p>This command will require an administrator account and a prompt for a password. The process can take a minute or two to complete. Look for the line <code>Successfully installed ...</code> to indicate a successful installation.</p>
+<h3 id="raspberry-pi">Raspberry Pi</h3>
+<p>Good news Pi fans! You're just a <code>pip3 install</code> away from coding your first game! Open a Terminal and type the following command:</p>
+<pre><code>sudo pip3 install -U predigame
+</code></pre>
+
+<p>New to coding and installing stuff? Check out our <a href="https://youtu.be/8e-uPzgzjIA">Raspberry Pi Installation Video</a>!</p>
+<h2 id="updating-predigame">Updating Predigame</h2>
+<p>Predigame changes frequently. Run the following command(s) to ensure you have the latest and greatest release.</p>
+<h3 id="windows">Windows</h3>
+<pre><code>python -m pip uninstall predigame
+python -m pip install predigame
+</code></pre>
+
+<p>We're not sure <code>pip install -U</code>  works correctly on Windows, so it's always good to uninstall first.</p>
+<h3 id="macos-and-raspberry-pi">macOS and Raspberry Pi</h3>
+<pre><code>sudo pip3 install -U predigame
+</code></pre>
+
+<h2 id="getting-started">Getting Started</h2>
+<p>Now that you have Predigame installed, let's open a command prompt (Windows) or terminal (macOS, Pi) and test out to an existing game to make sure things are working correctly.</p>
+<p>List available game downloads:</p>
+<pre><code>pred list
+</code></pre>
+
+<p>Try downloading the <code>clickninja</code> game:</p>
+<pre><code>pred pull clickninja
+</code></pre>
+
+<p>Assuming that was successful, let's try to start the game!</p>
+<pre><code>cd clickninja
+pred clickninja-levels.py
+</code></pre>
+
+<p>The <code>r</code> key can be used to reset the game. Hit <code>Esc</code> to close the window. If you want to run again, the <code>cd clickninja</code> command may not be necessary (if you are already in the <code>clickninja</code> directory).</p>
+<p>Want to learn more about customizing Click Ninja? Check out the the <a href="examples/clickninja/">game tutorial</a>.</p>
+<h3 id="macos-certificate-errors">macOS Certificate Errors</h3>
+<p>Some macOS users may see this error the first time using <code>pred</code>:</p>
+<pre><code>ssl.SSLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:749)
+</code></pre>
+
+<p>If that happens, run this command to install the certificates and try again:</p>
+<pre><code>sudo /Applications/Python 3.6/Install Certificates.command
+</code></pre>
+
+<h2 id="coding-your-first-game">Coding Your First Game</h2>
+<p>Our first game is going to be a digital picture frame. It's not <em>TECHNICALLY</em> a game, rather a fun example that showcases some of the flexibilities and power of Predigame.</p>
+<p>Open a command prompt (Windows) or terminal (macOS, Pi) and run the following command to create a new game:</p>
+<pre><code>pred new hello
+</code></pre>
+
+<p><em>Note</em> For windows users, it may be easier to run <code>cd Desktop</code> prior to <code>pred new</code> (files and folders stored on the desktop will be a little easier to find).</p>
+<p>This command will create a new directory <code>hello</code> and game template <code>hello/game.py</code> as well as some subdirectories that will be useful to hold custom images, backgrounds, and sounds. Using your favorite code editor, open the file <code>game.py</code>. You'll notice the game already has a few lines of code (we'll discuss what those mean next).</p>
+<p>Try adding this line to the bottom of the file:</p>
+<pre><code class="python">background()
+</code></pre>
+
+<p>So the completed code example should look like:</p>
+<pre><code class="python">WIDTH = 30
+HEIGHT = 20
+TITLE = 'Simple Game'
+
+background()
+</code></pre>
+
+<p>Save your changes. Then in the terminal, you'll want to run:</p>
+<pre><code>pred game.py
+</code></pre>
+
+<p>Did you see the background picture? Make sure you <code>cd hello</code> prior to running <code>pred</code> as you need to be in the same directory as your python files.</p>
+<p>There you go! First "game" down. Take a look at the <a href="examples/pictureframe/">Picture Frame</a> example for some other cool coding additions.</p>
+<h2 id="api-docs">API Docs</h2>
+<p>Predigame API documentation can be found here: <a href="http://predigame.io/api/predigame.html">http://predigame.io/api</a>. Not sure what this means? Don't worry. We'll cover this later!</p>
+<h2 id="support">Support</h2>
+<p>Find a bug? Have a question?</p>
+<ul>
+<li>Visit our Support Forum: <a href="https://groups.google.com/a/predicate.us/forum/#!forum/support">https://groups.google.com/a/predicate.us/forum/#!forum/supportloc</a></li>
+<li>GitHub User? Fork our repos - <a href="https://github.com/predigame">https://github.com/predigame</a>. We happily take pull requests :)</li>
+</ul></div>
+        </div>
+        <script>var base_url = '.';</script>
+        <script src="./js/base.js" defer></script>
+        <script src="./search/require.js" defer></script>
+        <script src="./search/search.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 0.17.3
+Build Date UTC : 2018-04-22 18:43:02
+-->

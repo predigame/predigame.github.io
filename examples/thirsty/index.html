@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Predicate Academy">
+        <link rel="canonical" href="http://predigame.io/examples/thirsty/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Thirsty Zombie - Predigame</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../js/highlight.pack.js" defer></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-116346762-1', 'predigame.io');
+            ga('send', 'pageview');
+        </script> 
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+       <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1356038102521881",
+         enable_page_level_ads: true
+        });
+       </script> 
+   </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Predigame</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li >
+                        <a href="../../about/">About</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../fireworks/">Fireworks!</a>
+</li>
+                            
+<li >
+    <a href="../pictureframe/">Picture Frame</a>
+</li>
+                            
+<li >
+    <a href="../bacon/">Making Bacon</a>
+</li>
+                            
+<li >
+    <a href="../clickninja/">Click Ninja</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Thirsty Zombie</a>
+</li>
+                            
+<li >
+    <a href="../zombie/">Zombie Madness</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../sprites/">Drawing Sprites</a>
+</li>
+                            
+<li >
+    <a href="../actors/">Actor Framework</a>
+</li>
+                            
+<li >
+    <a href="../levels/">Levels</a>
+</li>
+                            
+<li >
+    <a href="../mazes/">Mazes</a>
+</li>
+                            
+<li >
+    <a href="../score/">Scoring</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../clickninja/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../zombie/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/predigame"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#thirsty-zombie">Thirsty Zombie</a></li>
+            <li><a href="#prerequisites">Prerequisites</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#getting-started_1">Getting Started</a></li>
+            <li><a href="#zombie-creation">Zombie Creation</a></li>
+            <li><a href="#callback-functions">Callback Functions</a></li>
+            <li><a href="#throwing-soda">Throwing Soda</a></li>
+            <li><a href="#final-bits">Final Bits</a></li>
+            <li><a href="#complete-code">Complete Code</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="thirsty-zombie">Thirsty Zombie</h1>
+<p>Our zombie likes sprite and hates code. This game throws soda can sprites at the zombie where the zombie must consume (destroy) them. If the zombie consumes a "coke" sprite, it will explode and end the game. If the zombie misses too many "sprite" sprites, it will die from dehydration.  The zombie is rewarded one point for every "sprite" consumed.</p>
+<p><strong>Game Algorithm</strong>:</p>
+<ul>
+<li>create a game canvas with a width of 30 and height of 20 grid cells</li>
+<li>use <code>callback(function, time)</code> throw the cans</li>
+<li>pick a random probability for throwing a "coke"</li>
+<li>reward the zombie <code>1</code> point for every sprite consumed</li>
+<li>destroy the zombie, if<ul>
+<li>the zombie consumes a coke</li>
+<li>the score falls below zero</li>
+</ul>
+</li>
+<li>use random speeds and callback times to throw more or less cans</li>
+<li>use effects to make the game fun</li>
+<li>reset the game if the <code>r</code> key is pressed</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>You'll need to have the Predigame platform installed, a trusty text editor handy, and the command prompt (or terminal) open to complete this tutorial. Visit <a href="http://predigame.io">http://predigame.io</a> for installation instructions.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>To get things started, we're going download an existing Predigame game that has a few actors we can use to experiment with animations (you'll need an Internet connection to complete the download). This can be done by typing the following the command in the terminal:</p>
+<pre><code>pred pull thirsty
+</code></pre>
+
+<p>Then change into the <code>thirsty</code> directory.</p>
+<pre><code>cd thirsty
+</code></pre>
+
+<p>Now in the text editor, find and open the file <code>thirsty/game.py</code>.</p>
+<h2 id="getting-started_1">Getting Started</h2>
+<p>Here's the first few lines:</p>
+<pre><code class="python">WIDTH = 30
+HEIGHT = 20
+TITLE = 'Thirsty Zombie'
+
+# load in the stormy background
+BACKGROUND = 'stormy'
+</code></pre>
+
+<p>This will build a window of 30x20 grid cells and add a "stormy" background image. <em>Make sure this image is saved in the <code>backgrounds/</code> directory</em>.</p>
+<h2 id="zombie-creation">Zombie Creation</h2>
+<pre><code class="python"># create a zombie sprite. flip the sprite so the zombie faces to the right
+zombie = image('zombie-2', (5, 15), size = 3).speed(10).flip()
+
+# tell the zombie to follow the mouse movement
+zombie.follow()
+</code></pre>
+
+<p>We use the <code>.flip()</code> function to have the zombie face towards right right side of the screen.</p>
+<p>Here's how to throw a sprite object:</p>
+<pre><code class="python">def throw():
+    # pick a random position and select the y coordinate
+    y_pos = rand_pos()[1]
+
+    # create a soda and move it from right to left
+    target = 'sprite'
+    if randint(1, 5) == 4:
+        target = 'coke'     
+    s = image(target, (WIDTH+5, y_pos)).speed(2).collides(zombie, consume)
+    s.move_to((-1, y_pos), callback = lambda: miss(s))
+
+    # a callback to call the throw() function again
+    callback(throw, rand(0.5, 2))
+</code></pre>
+
+<h2 id="callback-functions">Callback Functions</h2>
+<p>Before we draw the code for a beverage, we need to define the logic that describes consumption. Remember, this is because python requires us to define our callback functions before we use them.</p>
+<pre><code class="python"># zombie consumes a drink and explodes if it's a coke
+def consume(target, zombie):
+    # destroy the can
+    target.destroy()
+
+    if target.name == 'coke':
+        # zombies don't like coke. end the game
+        zombie.destroy()
+        image('kaboom', center=(15, 10), size=25)
+        gameover()
+    else:
+        # we added a sprite. increase score
+        score(1)
+</code></pre>
+
+<p>If we don't consume a beverage, the zombie will need to suffer a little bit. Our second callback describes the "misses":</p>
+<pre><code class="python"># zombie misses the opportunity to take a drink and is thirsty.
+def miss(target):
+
+    # destroy the can
+    target.destroy()
+
+    # subtract a point if this was a sprite
+    if target.name == 'sprite':
+        score(-1)
+
+    # we lost
+    if score() &lt; 0:
+        text(&quot;TOTAL DEHYDRATION&quot;)
+        zombie.rotate(90).pulse(time=2, size=2)
+        gameover()
+</code></pre>
+
+<h2 id="throwing-soda">Throwing Soda</h2>
+<p>Throwing cans of soda is also a callback function, but controlled via time. A key to throwing is to mix up the positions a bit. The line of code <code>y_pos = rand_pos()[1]</code> is a shorthanded way of randomly picking a y (top/bottom) position. Read through the rest of the code below, we added some documentation to clarify each of the lines.</p>
+<pre><code class="python"># this is a callback that throws a sprite or coke across the screen
+def throw_soda():
+
+    # pick a random position and select the y coordinate
+    y_pos = rand_pos()[1]
+
+    # create a soda and move it from right to left
+    target = 'sprite'
+
+    # roughly 50% of the cans are cokes
+    if randint(1, 2) == 2:
+        target = 'coke'     
+
+    # position the sprite off the right side of the screen
+    # make it move fast (speed 10)
+    # if the zombie hits the can, execute the &quot;consume&quot; callback
+    s = image(target, (WIDTH+5, y_pos)).speed(10).collides(zombie, consume)
+
+    # move the sprite to the left. execute callback &quot;miss&quot; if movement finishes
+    s.move_to((-1, y_pos), callback = lambda: miss(s))
+
+    # a callback to call the throw() function again
+    callback(throw_soda, rand(0, 1.5))
+
+# schedule the throw callback to run
+callback(throw_soda, 1)
+</code></pre>
+
+<h2 id="final-bits">Final Bits</h2>
+<p>The final parts of the game enable score keeping and resetting the game if the 'r' key is pressed.</p>
+<pre><code class="python"># add this so we can keep score of the game
+score(color=WHITE)
+
+# press the r key to reset
+keydown('r', reset)
+</code></pre>
+
+<h2 id="complete-code">Complete Code</h2>
+<p>Below is the complete code for "thirsty zombie".  We added an easter egg if the 'b' button is pressed - launch of soccer balls; it's an added obstacle that the zombie will need to avoid.</p>
+<pre><code class="python">WIDTH = 30
+HEIGHT = 20
+TITLE = 'Thirsty Zombie'
+
+# load in the stormy background
+BACKGROUND = 'stormy'
+
+# create a zombie sprite. flip the sprite so the zombie faces to the right
+zombie = image('zombie-2', (5, 15), size = 3).speed(10).flip()
+
+# tell the zombie to follow the mouse movement
+zombie.follow()
+
+# keep track if the zombie is spinning
+spinning = False
+
+# zombie consumes a drink and explodes if it's a coke
+def consume(target, zombie):
+
+    # a spinning zombie cannot consume things
+    if spinning:
+        return
+
+    # destroy the can
+    target.destroy()
+
+    if target.name == 'coke':
+        # zombies don't like coke. end the game
+        zombie.destroy()
+        image('kaboom', center=(15, 10), size=25)
+        gameover()
+    else:
+        # we added a sprite. increase score
+        score(1)
+
+# zombie misses the opportunity to take a drink and is thirsty.
+def miss(target):
+
+    # destroy the can
+    target.destroy()
+
+    # subtract a point if this was a sprite
+    if target.name == 'sprite':
+        score(-1)
+
+    # we lost
+    if score() &lt; 0:
+        text(&quot;TOTAL DEHYDRATION&quot;)
+        zombie.rotate(90).pulse(time=2, size=2)
+        gameover()
+
+# this is a callback that throws a sprite or coke across the screen
+def throw_soda():
+
+    # pick a random position and select the y coordinate
+    y_pos = rand_pos()[1]
+
+    # create a soda and move it from right to left
+    target = 'sprite'
+
+    # roughly 50% of the cans are cokes
+    if randint(1, 2) == 2:
+        target = 'coke'     
+
+    # position the sprite off the right side of the screen
+    # make it move fast (speed 10)
+    # if the zombie hits the can, execute the &quot;consume&quot; callback
+    s = image(target, (WIDTH+5, y_pos)).speed(10).collides(zombie, consume)
+
+    # move the sprite to the left. execute callback &quot;miss&quot; if movement finishes
+    s.move_to((-1, y_pos), callback = lambda: miss(s))
+
+    # a callback to call the throw() function again
+    callback(throw_soda, rand(0, 1.5))
+
+# schedule the throw callback to run
+callback(throw_soda, 1)
+
+# this is a callback when the zombie is done spinning
+def done_spinning():
+
+    # the &quot;global&quot; variable is set to False (since we are done spinning)
+    global spinning
+    spinning = False
+
+# this is a callback when the zombie is hit by a ball
+def spinner(b, z):
+
+    # the &quot;global&quot; variable is set to True (since we are spinning)
+    global spinning
+    spinning = True
+
+    # destroy the ball
+    b.destroy()
+
+    # spin the zombie.. time probably can't go much smaller than 0.5
+    # execute callback done_spinning after completing two rotations
+    z.spin(time=0.5, rotations=2, callback=done_spinning)
+
+# this is a callback function to launch the ball
+def launch():
+
+    # create a ball and position off the right side of the screen
+    random_y_position = rand_pos()[1]
+
+    # position balls off the screen, make them spin and move a little fast
+    ball = image('ball', (WIDTH+5, random_y_position), size=2).spin(0.2).speed(5)
+
+    # move right to left, destroy if movement completes
+    ball.move_to((-5, random_y_position), callback=ball.destroy)
+
+    # make the zombie spin if hit by a ball
+    ball.collides(zombie, spinner)
+
+    # prepare to launch another
+    callback(launch, rand(0.2, 1))
+
+# hitting 'b' starts launching balls!
+keydown('b', launch)
+
+# add this so we can keep score of the game
+score(color=WHITE)
+
+# press the r key to reset
+keydown('r', reset)
+</code></pre>
+
+<p>Save this code as <code>game.py</code> and let's give it a run!</p>
+<pre><code>pred game.py
+</code></pre>
+
+<p>If it loads correctly, the following game canvas should display. Have fun!!</p>
+<p><img alt="alt text" src="http://predicate.us/predigame/images/sprites_grid6.png" title="Predigame Thirsty Zombie" /></p></div>
+        </div>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/require.js" defer></script>
+        <script src="../../search/search.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>

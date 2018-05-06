@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Predicate Academy">
+        <link rel="canonical" href="http://predigame.io/examples/mazes/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Mazes - Predigame</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../js/highlight.pack.js" defer></script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-116346762-1', 'predigame.io');
+            ga('send', 'pageview');
+        </script> 
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+       <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1356038102521881",
+         enable_page_level_ads: true
+        });
+       </script> 
+   </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">Predigame</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Home</a>
+                    </li>
+                    <li >
+                        <a href="../../about/">About</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Examples <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../fireworks/">Fireworks!</a>
+</li>
+                            
+<li >
+    <a href="../pictureframe/">Picture Frame</a>
+</li>
+                            
+<li >
+    <a href="../bacon/">Making Bacon</a>
+</li>
+                            
+<li >
+    <a href="../clickninja/">Click Ninja</a>
+</li>
+                            
+<li >
+    <a href="../thirsty/">Thirsty Zombie</a>
+</li>
+                            
+<li >
+    <a href="../zombie/">Zombie Madness</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tutorials <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../sprites/">Drawing Sprites</a>
+</li>
+                            
+<li >
+    <a href="../actors/">Actor Framework</a>
+</li>
+                            
+<li >
+    <a href="../levels/">Levels</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Mazes</a>
+</li>
+                            
+<li >
+    <a href="../score/">Scoring</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../levels/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../score/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/predigame"><i class="fa fa-github"></i> GitHub</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#drawing-mazes">Drawing Mazes</a></li>
+            <li><a href="#prerequisites">Prerequisites</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#random-mazes">Random Mazes</a></li>
+            <li><a href="#maze-editor">Maze Editor</a></li>
+            <li><a href="#maze-generator">Maze Generator</a></li>
+            <li><a href="#maze-examples">Maze Examples</a></li>
+            <li><a href="#next-steps">Next Steps</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="drawing-mazes">Drawing Mazes</h1>
+<p>We can code a number of games with mazes. From Pacman to avoiding the zombie apocalypse, mazes are a fun and easy way to plant obstacles or walls.  The Predigame platform supports a number of maze options that we'll explore in this README. For those familiar with the Predigame Sprite, mazes are nothing more than a collection of sprites, normally all of the same type and size.</p>
+<p>Let's explore how to code mazes!</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>You'll need to have the Predigame platform installed, a trusty text editor handy, and the command prompt (or terminal) open to complete this tutorial. Visit <a href="http://predigame.io">http://predigame.io</a> for installation instructions.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>To get things started, we're going download an existing Predigame game that has a few maxes we can use to experiment with animations (you'll need an Internet connection to complete the download). This can be done by typing the following the command in the terminal:</p>
+<pre><code>pred pull mazes
+</code></pre>
+
+<p>Then change into the <code>mazes</code> directory.</p>
+<pre><code>cd mazes
+</code></pre>
+
+<p>Now let's create a basic Predigame canvas that we'll use to build the maze. The canvas will have a width of 30 grid cells and a height of 20 grid cells.</p>
+<pre><code class="python">WIDTH = 30
+HEIGHT = 20
+TITLE = 'MAZE'
+</code></pre>
+
+<p>Save your changes. Let's call the file <code>game.py</code>.  Try running the game from the terminal using the <code>pred</code> command (you'll want to run this command from the directory where you saved the file).</p>
+<pre><code>pred game.py
+</code></pre>
+
+<p>This program doesn't do much just yet. Just an empty window titled "MAZE" - that is missing the maze! Let's add that now.</p>
+<h2 id="random-mazes">Random Mazes</h2>
+<p>The first type of maze we'll create is the computer generated randomized maze. The code below will iterate over every cell in the game and make a random decision to draw a maze.</p>
+<pre><code class="python"># these two nested for loops iterate over
+# every grid cell on the canvas
+for y in range(HEIGHT):
+    for x in range(WIDTH):
+        # don't create a block on the location of
+        # the player OR the location of the green cell
+        if (x, y) == (0, 0) or (x, y) == (29, 16):
+            continue
+        # make a random decision to color the cell red
+        # this number can be adjusted to make the cells
+        # smaller or larger.
+        if rand(1, 3) &gt; 2.5:
+            shape(RECT, RED, (x, y))
+</code></pre>
+
+<p>The line <code>rand(1, 3) &gt; 2.5</code> represents the probability of drawing a maze. There is about a 16.6667% chance that a given cell will have a <strong>RED</strong> cell colored. Try adjusting the <code>2.5</code> to a larger (but less than 3) or smaller (but greater than 1) and see what happens.</p>
+<p>You'll also notice that with the if condition:</p>
+<pre><code class="python">        if (x, y) == (0, 0) or (x, y) == (29, 16):
+            continue
+</code></pre>
+
+<p>Will never consider placing a <strong>RED</strong> cell at position <code>(0, 0)</code> (top left corner) or <code>(29, 16)</code> (bottom right corner). This where we will put the player and a green destination block.</p>
+<p>Now that we can draw a random maze, lets add a player sprite at the top of the code, under the <code>TITLE</code> line.</p>
+<pre><code class="python"># create a sprite based on the &quot;player&quot; image
+# position at the top left corner
+# control the sprite with the arrow keys
+# the speed of the sprite enables &quot;graceful&quot;
+# movement with the keyboard
+p = image('player', (0, 0)).speed(5).keys()
+</code></pre>
+
+<p>Finally, to complete our simple game, let's add a <strong>GREEN</strong> destination block. We'll also add a callback to end the game when the player sprite collides with the destination block. Let's add this code to the bottom of the file.</p>
+<pre><code class="python"># a callback function for when the player reaches
+# the green destination
+def win(b, p):
+    text('YOU WIN', BLUE)
+    gameover()
+
+# draw a green destination cell on the bottom right
+d = shape(RECT, GREEN, (WIDTH-1, HEIGHT-1), tag='destination')
+
+# if the player reaches this cell, execute the 'win' callback
+d.collides(p, win)
+
+# register the 'r' key for resetting the game
+keydown('r', reset)
+</code></pre>
+
+<p>For context, here is the complete code:</p>
+<pre><code class="python">WIDTH = 30
+HEIGHT = 18
+TITLE = 'MAZE'
+
+# create a sprite based on the &quot;player&quot; image
+# position at the top left corner
+# control the sprite with the arrow keys
+# the speed of the sprite enables &quot;graceful&quot;
+# movement with the keyboard
+p = image('player', (0, 0)).speed(5).keys()
+
+# center the player on the 0,0 grid cell
+p.move_to((0, 0))
+
+# these two nested for loops iterate over
+# every grid cell on the canvas
+for y in range(HEIGHT):
+    for x in range(WIDTH):
+        # don't create a block on the location of
+        # the player OR the location of the green cell
+        if (x, y) == (0, 0) or (x, y) == (29, 16):
+            continue
+        # make a random decision to color the cell red
+        # this number can be adjusted to make the cells
+        # smaller or larger.
+        if rand(1, 3) &gt; 2.5:
+            shape(RECT, RED, (x, y))
+
+# a callback function for when the player reaches
+# the green destination
+def win(b, p):
+    text('YOU WIN', BLUE)
+    gameover()
+
+# draw a green destination cell on the bottom right
+d = shape(RECT, GREEN, (WIDTH-1, HEIGHT-1), tag='destination')
+
+# if the player reaches this cell, execute the 'win' callback
+d.collides(p, win)
+
+# register the 'r' key for resetting the game
+keydown('r', reset)
+</code></pre>
+
+<p>Save the changes and try running the code:</p>
+<pre><code>my_machine$ pred maze.py
+</code></pre>
+<p>Notice that player sprite can walk through walls? That's a bit silly. We'll fix that in a few minutes. Can't reach the destination? Try hitting <code>r</code> to reset the game.</p>
+<h3 id="dont-hit-the-walls">Don't hit the walls!</h3>
+<p>Now let's modify the code to end the game if the player sprite bumps into a wall. It's a small insertion we can add to the end of the file.</p>
+<pre><code class="python"># a callback function for when the player runs into a red cell
+def lose(player, block):
+    if block.tag != 'destination':
+        text('GAME OVER', BLACK)
+        gameover()
+
+# if the player 'collides' with any cell, execute the 'lose' callback
+p.collides(sprites(), lose)
+</code></pre>
+
+<p>Save the changes and try running the code:</p>
+<pre><code>my_machine$ pred maze.py
+</code></pre>
+<h3 id="wall-avoidance">Wall Avoidance</h3>
+<p>In a real game, we don't want the player sprite to walk into walls. It's possible to check the destination of where the player is about to move prior to making the move. We'll call this a <em>precondition</em> - Predigame handles this as a callback function.</p>
+<p>Add the following code to the type of your file, under the <code>TITLE</code> line:</p>
+<pre><code class="python"># a callback that keeps the player from running
+# into walls. it's only acceptable to walk into
+# an object marked as a &quot;destination&quot;
+def evaluate(action, sprite, pos):
+    obj = at(pos)
+    if obj:
+        if obj.tag == 'destination':
+            return True
+        else:
+            return False
+    else:
+        return True
+</code></pre>
+
+<p>This code calls the <code>at(pos)</code> function that returns any objects that are <strong>at</strong> a given location - the location the sprite is about to move to. If there is an object at the location <strong>AND</strong>  that object doesn't have the tag named <code>destination</code>, it must be a wall, so <code>evaluate</code> will return <code>False</code>, an indication it is not safe to complete the movement. In all other conditions - either nothing is there or something with the name <code>destination</code>, permit the move to complete.</p>
+<p>Next we'll set the <code>evaluate</code> callback function and assign to execute on <code>keys()</code> function. Let's make a change to our player sprite:</p>
+<pre><code class="python"># create a sprite based on the &quot;player&quot; image
+# position at the top left corner. control the
+# sprite with the arrow keys while checking a
+# precondition to make sure we don't walk into
+# walls. the speed of the sprite enables &quot;graceful&quot;
+# movement with the keyboard
+p = image('player', (0, 0)).speed(5).keys(precondition=evaluate)
+</code></pre>
+
+<p>The code from the prior step can be removed since it won't be called anymore. For context, here's the complete file in case you get a little lost making changes in the right locations.</p>
+<pre><code class="python">WIDTH = 30
+HEIGHT = 18
+TITLE = 'MAZE'
+
+# a callback that keeps the player from running
+# into walls. it's only acceptable to walk into
+# an object marked as a &quot;destination&quot;
+def evaluate(action, sprite, pos):
+    obj = at(pos)
+    if obj:
+        if obj.tag == 'destination':
+            return True
+        else:
+            return False
+    else:
+        return True
+
+
+# create a sprite based on the &quot;player&quot; image
+# position at the top left corner. control the
+# sprite with the arrow keys while checking a
+# precondition to make sure we don't walk into
+# walls. the speed of the sprite enables &quot;graceful&quot;
+# movement with the keyboard
+p = image('player', (0, 0)).speed(5).keys(precondition=evaluate)
+
+# these two nested for loops iterate over
+# every grid cell on the canvas
+for y in range(HEIGHT):
+    for x in range(WIDTH):
+        # don't create a block on the location of
+        # the player OR the location of the green cell
+        if (x, y) == (0, 0) or (x, y) == (29, 16):
+            continue
+        # make a random decision to color the cell red
+        # this number can be adjusted to make the cells
+        # smaller or larger.
+        if rand(1, 3) &gt; 2.5:
+            shape(RECT, RED, (x, y))
+
+# a callback function for when the player reaches
+# the green destination
+def win(b, p):
+    text('YOU WIN', BLUE)
+    gameover()
+
+# draw a green destination cell on the bottom right
+d = shape(RECT, GREEN, (WIDTH-1, HEIGHT-1), tag='destination')
+
+# if the player reaches this cell, execute the 'win' callback
+d.collides(p, win)
+
+# register the 'r' key for resetting the game
+keydown('r', reset)
+</code></pre>
+
+<h2 id="maze-editor">Maze Editor</h2>
+<p>Random mazes can be a little challenging to work with since we don't have any control where the obstacles are created. We'll now walk through how to create mazes.</p>
+<p>To help illustrate mazes, the Predigame platform includes a maze editor example that can be used to create, preview, and delete mazes. Try running the code and create some mazes.</p>
+<pre><code>my_machine$ pred maze-editor.py
+</code></pre>
+<p>The code includes some debugging information on start up that documents how to use the maze  editor.</p>
+<pre><code>Left Click to draw / Right Click to undo a selection
+p - preview saved mazes (hit again for next)
+d - delete the current saved maze
+s - save the current maze in a new file
+r - reset and clear screen
+</code></pre>
+
+<p>It's possible to create some pretty cool mazes. Give it a try and see what you can create! Here's an example maze:</p>
+<p><img alt="alt text" src="http://predicate.us/predigame/images/maze_editor.png" title="Predigame Grid Coordinates" /></p>
+<h3 id="loading-saved-mazes">Loading Saved Mazes</h3>
+<p>Once a few mazes have been created, it's possible to load them into a new game. Let's take a look at a simple example. This code assumes that two mazes "1" and "2" are available in the <code>mazes/</code> directory.</p>
+<pre><code class="python">WIDTH = 30
+HEIGHT = 18
+TITLE = 'MAZE From File'
+
+# load a sample maze
+maze('1', partial(shape, RECT, RED))
+
+# load another sample maze
+maze('2', partial(image, 'stone'))
+
+# center the player on the 0,0 grid cell
+p = image('player', (0, 0)).speed(5).keys()
+
+# register the 'r' key for resetting the game
+keydown('r', reset)
+</code></pre>
+
+<p>This example loads two separate mazes into the game - one containing <strong>RED</strong> shapes, the other <strong>stone</strong> images. The code uses a concept called a "partial".  This is like a callback function, but provides the coder additional controls for how that callback can be used.</p>
+<h4 id="understanding-partials">Understanding Partials</h4>
+<p>Here's an example shape sprite that will create a <strong>RED</strong> rectangle at a random position.</p>
+<pre><code class="python">shape(RECT, RED)
+</code></pre>
+
+<p>Now, here's the above example coded as a partial definition:</p>
+<pre><code class="python">partial(shape, RECT, RED)
+</code></pre>
+
+<p>Notice the similarities? Predigame and python will unpack the partial into the shape once it's ready to create the shape.</p>
+<h2 id="maze-generator">Maze Generator</h2>
+<p>We can also randomly generate mazes that are pretty close to a Pacman-style game with the basic function all:</p>
+<pre><code class="python">maze()
+</code></pre>
+
+<p>Notice this is <strong>the exact same</strong> function as before? This means that if the filename of a maze is not provide, Predigame will create a random maze instead.</p>
+<p>As with any maze, it's possible to provide a <code>partial</code> callback to describe the type of walls to create. For example, this maze will be constructed out of <code>'stone'</code> images:</p>
+<pre><code class="python">maze(callback=partial(image, 'stone'))
+</code></pre>
+
+<p>and this maze will be constructed out of black rectangles:</p>
+<pre><code class="python">maze(callback=partial(shape, RECT, BLACK))
+</code></pre>
+
+<h2 id="maze-examples">Maze Examples</h2>
+<p>We've included a few examples to illustrate some mini-games that can be created with Mazes:</p>
+<ul>
+<li><code>maze-1.py</code> - randomly placed blocks where the player must navigate to the bottom right corner. Notice that they player can walk through walls.</li>
+<li><code>maze-2.py</code> - continuation of <code>maze-1.py</code> where the player must avoid walls.</li>
+<li><code>maze-3.py</code> - variation of <code>maze-2.py</code> but the player respects physics and is not able to walk through walls.</li>
+<li><code>maze-4.py</code> - load a maze from a file.</li>
+<li><code>maze-5.py</code> - continuation of <code>maze-4.py</code> but all whitespace is filled with coins.</li>
+<li><code>maze-6.py</code> - random maze that fills all whitespace with coins.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<p>Want to see actors in action? Take a look at the <a href="../../examples/bacon">Making Bacon</a> game.</p></div>
+        </div>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/require.js" defer></script>
+        <script src="../../search/search.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&larr;</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>&rarr;</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </body>
+</html>
