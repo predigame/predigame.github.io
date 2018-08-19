@@ -11,6 +11,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>http://predigame.io/examples/fireworks/</loc>
      <lastmod>2018-08-19</lastmod>
      <changefreq>daily</changefreq>
